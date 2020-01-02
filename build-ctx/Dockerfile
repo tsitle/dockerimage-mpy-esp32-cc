@@ -12,8 +12,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN \
 	apt-get update \
-	&& apt-get install -y \
-			gcc git make libncurses-dev flex bison gperf \
+	&& apt-get upgrade -y \
+	&& apt-get dist-upgrade -y \
+	&& apt-get install -y --no-install-recommends \
+			git \
+			build-essential \
+			libncurses-dev flex bison gperf \
 			python python-pip python-setuptools python-serial \
 			python-cryptography python-future python-pyparsing python-pyelftools \
 			python3 python3-pip python3-setuptools python3-serial \
