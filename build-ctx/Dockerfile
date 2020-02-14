@@ -1,8 +1,6 @@
-ARG CF_UBUNTU_RELEASE
-ARG CF_UBUNTU_VERSION
-ARG CF_CPUARCH_DEB_DIST
+ARG CF_SRC_OS_IMAGE
 
-FROM tsle/os-ubuntu-${CF_UBUNTU_RELEASE}-${CF_CPUARCH_DEB_DIST}:${CF_UBUNTU_VERSION}
+FROM ${CF_SRC_OS_IMAGE}
 
 #
 # Based on https://github.com/josht/docker-micropython-esp/blob/master/esp32/Dockerfile

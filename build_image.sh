@@ -158,10 +158,12 @@ cd build-ctx || exit 1
 
 _getCommonFile "xtensa_esp32_toolchain/${LVAR_XTENSA_VER}.tgz" || exit 1
 
+LVAR_SRC_OS_IMAGE="tsle/os-ubuntu-${LVAR_UBUNTU_RELEASE}-${LVAR_DEBIAN_DIST}:${LVAR_UBUNTU_VERSION}"
+docker pull $LVAR_SRC_OS_IMAGE || exit 1
+echo
+
 docker build \
-		--build-arg CF_CPUARCH_DEB_DIST="$LVAR_DEBIAN_DIST" \
-		--build-arg CF_UBUNTU_RELEASE="$LVAR_UBUNTU_RELEASE" \
-		--build-arg CF_UBUNTU_VERSION="$LVAR_UBUNTU_VERSION" \
+		--build-arg CF_SRC_OS_IMAGE="$LVAR_SRC_OS_IMAGE" \
 		--build-arg CF_XTENSA_VER="$LVAR_XTENSA_VER" \
 		--build-arg CF_ESPIDF_GIT_HASH="$LVAR_ESPIDF_GIT_HASH" \
 		--build-arg CF_MPY_VER="v${LVAR_IMAGE_VER}" \
