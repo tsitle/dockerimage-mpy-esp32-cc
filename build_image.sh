@@ -141,12 +141,14 @@ LVAR_UBUNTU_VERSION="18.04"
 # ----------------------------------------------------------
 
 LVAR_IMAGE_NAME="mpy-esp32-cc-$LVAR_DEBIAN_DIST"
-LVAR_IMAGE_VER="1.12"
+LVAR_IMAGE_VER="1.13"
 
 LVAR_XTENSA_VER="xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0"
 
 # see MicroPython file /ports/esp32/Makefile for the currently supported ESP-IDF version
-LVAR_ESPIDF_GIT_HASH="6ccb4cf5b7d1fdddb8c2492f9cbc926abaf230df"
+#   https://github.com/micropython/micropython/blob/v1.13/ports/esp32/Makefile
+#     ESPIDF_SUPHASH_V3 := 9e70825d1e1cbf7988cf36981774300066580ea7
+LVAR_ESPIDF_GIT_HASH="9e70825d1e1cbf7988cf36981774300066580ea7"
 
 # ----------------------------------------------------------
 
